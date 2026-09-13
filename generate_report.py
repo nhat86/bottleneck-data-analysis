@@ -92,7 +92,7 @@ f = px.imshow(corr, text_auto=True, color_continuous_scale='RdBu_r', zmin=-1, zm
 f.update_layout(height=420)
 figs['corr'] = f
 
-plots = {k: f.to_json() for k, f in figs.items()}
+plots = {k: json.loads(f.to_json()) for k, f in figs.items()}
 
 # ---------- HTML ----------
 fmt = lambda v: f"{v:,.0f}".replace(',', ' ')
